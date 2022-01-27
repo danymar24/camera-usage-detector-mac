@@ -19,7 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let cameraUsageController = CameraUsageController()
 
     @IBOutlet weak var cameraOnURLField: NSTextField!
-    @IBOutlet weak var cameraOffURLField: NSTextField!
     
     @IBOutlet weak var cameraSelectorPopup: NSPopUpButton!
     
@@ -112,9 +111,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let cameraOnURLString = UserDefaults.standard.url(forKey: "cameraOnURL")?.absoluteString {
             self.cameraOnURLField.stringValue = cameraOnURLString
         }
-        if let cameraOffURLString = UserDefaults.standard.url(forKey: "cameraOffURL")?.absoluteString {
-            self.cameraOffURLField.stringValue = cameraOffURLString
-        }
     }
     
     @IBAction func saveUpdateURLs(_ sender: Any) {
@@ -126,9 +122,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let cameraOnURL = URL(string: self.cameraOnURLField.stringValue) {
             UserDefaults.standard.set(cameraOnURL, forKey: "cameraOnURL")
-        }
-        if let cameraOffURL = URL(string: self.cameraOffURLField.stringValue) {
-            UserDefaults.standard.set(cameraOffURL, forKey: "cameraOffURL")
         }
         self.window.close()
         UserDefaults.standard.synchronize()

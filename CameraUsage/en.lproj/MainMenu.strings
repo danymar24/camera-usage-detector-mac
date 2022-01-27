@@ -15,7 +15,7 @@
 "BOF-NM-1cW.title" = "Preferences…";
 
 /* Class = "NSTextFieldCell"; title = "Camera On URL:"; ObjectID = "EU0-OB-n6G"; */
-"EU0-OB-n6G.title" = "Camera On URL:";
+"EU0-OB-n6G.title" = "URL:";
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "JOR-W8-Gpp"; */
 "JOR-W8-Gpp.title" = "Save";

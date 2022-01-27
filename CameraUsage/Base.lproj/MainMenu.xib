@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +14,6 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CameraUsage" customModuleProvider="target">
             <connections>
-                <outlet property="cameraOffURLField" destination="SDz-du-6aY" id="PEG-39-0U9"/>
                 <outlet property="cameraOnURLField" destination="1WL-f4-bvw" id="eQn-tT-opE"/>
                 <outlet property="cameraSelectorPopup" destination="bcQ-qR-CKj" id="pij-8E-8SV"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -54,14 +53,14 @@
         <window title="CameraUsage" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="476" height="298"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="contentRect" x="335" y="390" width="476" height="253"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="476" height="298"/>
+                <rect key="frame" x="0.0" y="0.0" width="476" height="253"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-f4-bvw" customClass="EditingTextField" customModule="CameraUsage" customModuleProvider="target">
-                        <rect key="frame" x="20" y="105" width="438" height="21"/>
+                        <rect key="frame" x="20" y="60" width="438" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="https://homebridge:8081/myCamera/on" drawsBackground="YES" id="P76-Nc-ZdO">
                             <font key="font" usesAppearanceFont="YES"/>
@@ -70,7 +69,7 @@
                         </textFieldCell>
                     </textField>
                     <textField identifier="WINDOW_PREFERENCES_DESCRIPTION" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hU-KC-tLV">
-                        <rect key="frame" x="20" y="230" width="438" height="48"/>
+                        <rect key="frame" x="20" y="185" width="438" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" title="WINDOW_PREFERENCES_DESCRIPTION" id="RMl-dv-U66">
                             <font key="font" metaFont="message"/>
@@ -79,7 +78,7 @@
                         </textFieldCell>
                     </textField>
                     <textField identifier="LABEL_CAMERA_ON_URL" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYc-Pq-j3K">
-                        <rect key="frame" x="19" y="134" width="441" height="16"/>
+                        <rect key="frame" x="19" y="89" width="441" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="LABEL_CAMERA_ON_URL" id="EU0-OB-n6G">
                             <font key="font" metaFont="systemSemibold" size="13"/>
@@ -87,30 +86,12 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SDz-du-6aY" customClass="EditingTextField" customModule="CameraUsage" customModuleProvider="target">
-                        <rect key="frame" x="20" y="49" width="438" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="https://homebridge:8081/myCamera/off" drawsBackground="YES" id="VjG-D1-wF4">
-                            <font key="font" usesAppearanceFont="YES"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField identifier="LABEL_CAMERA_OFF_URL" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-D6-9Ue">
-                        <rect key="frame" x="18" y="78" width="442" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="LABEL_CAMERA_OFF_URL" id="dXs-wZ-Wrv">
-                            <font key="font" metaFont="systemSemibold" size="13"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bcQ-qR-CKj">
-                        <rect key="frame" x="18" y="155" width="442" height="25"/>
+                        <rect key="frame" x="18" y="110" width="442" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="7Ng-5Y-h8W" id="o4h-oA-X2g">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="message"/>
+                            <font key="font" metaFont="menu"/>
                             <menu key="menu" id="7Wr-Tv-kBq">
                                 <items>
                                     <menuItem title="Item 1" state="on" id="7Ng-5Y-h8W"/>
@@ -121,7 +102,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epq-7H-3io">
-                        <rect key="frame" x="18" y="187" width="262" height="16"/>
+                        <rect key="frame" x="18" y="142" width="262" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="LABEL_SELECT_CAMERA" id="YLS-hI-VGI">
                             <font key="font" metaFont="systemSemibold" size="13"/>
@@ -134,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="SAVE" bezelStyle="rounded" alignment="center" borderStyle="border" identifier="BUTTON_SAVE" imageScaling="proportionallyDown" inset="2" id="JOR-W8-Gpp">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="message"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="saveUpdateURLs:" target="Voe-Tx-rLC" id="VQk-m6-iMp"/>
@@ -142,7 +123,7 @@
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="507" y="401"/>
+            <point key="canvasLocation" x="507" y="378.5"/>
         </window>
     </objects>
 </document>
