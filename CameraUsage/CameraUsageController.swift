@@ -131,19 +131,23 @@ class CameraUsageController {
     }
     func sendUpdateToServer() {
         UserDefaults.standard.synchronize()
-        var urlKey = "cameraOffURL"
-        if self.lastCameraState {
+        let urlKey = "cameraOnURL"
+        /*if self.lastCameraState {
             urlKey = "cameraOnURL"
-        }
+        }*/
         if let url = UserDefaults.standard.url(forKey: urlKey) {
+
+            var request = URLRequest(url: url);
+            let status = self.lastCameraState ? "In_Meeting" : "Available";
+            let body = "status=" + status;
+            let bodyData = body.data(using: String.Encoding.utf8);
             
+            request.httpMethod = "POST";
+            request.httpBody = bodyData;
             
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
                 print("done updating")
             }.resume()
         }
-
     }
-
-    
 }
