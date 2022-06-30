@@ -6,6 +6,9 @@
   Copyright © 2020 Tobias Timpe. All rights reserved.
 */
 "MENU_ITEM_PREFERENCES" = "Preferences…";
+"MENU_ITEM_AVAILABLE" = "Set available";
+"MENU_ITEM_BUSY" = "Set busy";
+"MENU_ITEM_AWAY" = "Set away";
 "MENU_ITEM_QUIT" = "Quit CameraUsage";
 "ANY_CAMERA" = "Any camera";
 "PAUSE_MONITORING" = "Monitoring enabled";

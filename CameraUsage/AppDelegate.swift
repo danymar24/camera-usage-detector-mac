@@ -35,6 +35,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let menu = NSMenu()
         
+        let setAvailableMenuItem = NSMenuItem(title: NSLocalizedString("MENU_ITEM_AVAILABLE", comment: "Set available"), action:
+            #selector(self.setAvailable(_:)), keyEquivalent: "")
+        let setBusyMenuItem = NSMenuItem(title: NSLocalizedString("MENU_ITEM_BUSY", comment: "Set busy"), action:
+            #selector(self.setBusy(_:)), keyEquivalent: "")
+        let setAwayMenuItem = NSMenuItem(title: NSLocalizedString("MENU_ITEM_AWAY", comment: "Set away"), action:
+            #selector(self.setAway(_:)), keyEquivalent: "")
+        
         let playPauseMenuItem = NSMenuItem(title: NSLocalizedString("PAUSE_MONITORING", comment: "Pause monitoring"), action: #selector(self.toggleMonitoringEnabled(_:)), keyEquivalent: "")
         playPauseMenuItem.state = .on
         
@@ -42,7 +49,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let quitMenuItem = NSMenuItem(title: NSLocalizedString("MENU_ITEM_QUIT", comment: "Quit"), action: #selector(self.quitApp), keyEquivalent: "")
         
-        
+        menu.addItem(setAvailableMenuItem)
+        menu.addItem(setBusyMenuItem)
+        menu.addItem(setAwayMenuItem)
         menu.addItem(playPauseMenuItem)
         menu.addItem(preferencesMenuItem)
         menu.addItem(quitMenuItem)
@@ -63,6 +72,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func quitApp() {
         NSApp.terminate(nil)
+    }
+    
+    @objc func setAvailable(_ sender: NSMenu) {
+        cameraUsageController.sendUpdateToServer(status: "Available")
+    }
+    
+    @objc func setBusy(_ sender: NSMenu) {
+        cameraUsageController.sendUpdateToServer(status: "In_Meeting")
+    }
+    
+    @objc func setAway(_ sender: NSMenu) {
+        cameraUsageController.sendUpdateToServer(status: "Away")
     }
     
     @objc func toggleMonitoringEnabled(_ sender: NSMenuItem) {

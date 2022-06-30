@@ -104,14 +104,14 @@ class CameraUsageController {
     
     @objc func check() {
         let id: Int = UserDefaults.standard.integer(forKey: "selectedCameraId")
-        
+        let status: String = self.lastCameraState ? "Available" : "In_Meeting" 
         if id == 0 {
             // any camera
             if (self.lastCameraState != isAnyCameraOn()) {
                    // Got update
                    self.lastCameraState = isAnyCameraOn()
                    print("State changed")
-                   self.sendUpdateToServer()
+                self.sendUpdateToServer(status: status)
                }
         } else {
             // single camera
@@ -121,7 +121,7 @@ class CameraUsageController {
                    // Got update
                 self.lastCameraState = camera.isOn
                    print("State changed")
-                   self.sendUpdateToServer()
+                self.sendUpdateToServer(status: status)
             }
             }
         }
@@ -129,7 +129,8 @@ class CameraUsageController {
         
    
     }
-    func sendUpdateToServer() {
+    
+    @objc func sendUpdateToServer(status: String) {
         UserDefaults.standard.synchronize()
         let urlKey = "cameraOnURL"
         /*if self.lastCameraState {
@@ -138,7 +139,6 @@ class CameraUsageController {
         if let url = UserDefaults.standard.url(forKey: urlKey) {
 
             var request = URLRequest(url: url)
-            let status = self.lastCameraState ? "In_Meeting" : "Available"
             let params = ["payload": ["object": ["presence_status": status]]]
             let bodyData = try? JSONSerialization.data(withJSONObject: params)
             
